@@ -10,8 +10,15 @@ import java.util.Arrays;
  */
 public class DemoArrays {
     public static void main(String[] args) {
-        int[] intArray = {10,20,30};
+        int[] intArray = {10,30,20};
         String intStr = Arrays.toString(intArray);
-        System.out.println(intStr);         //[10,20,30]
+        System.out.println(intStr);         //[10,30,20]
+
+        Arrays.sort(intArray);
+        System.out.println(Arrays.toString(intArray));      //[10, 20, 30]
+
+        String[] array2 = {"bbb", "aaa", "ccc"};
+        Arrays.sort(array2);
+        System.out.println(Arrays.toString(array2)); // [aaa, bbb, ccc]
     }
 }
