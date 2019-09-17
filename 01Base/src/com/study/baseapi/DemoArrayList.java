@@ -1,6 +1,7 @@
 package com.study.baseapi;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * Created by root on 2019/8/22.
@@ -48,5 +49,7 @@ public class DemoArrayList {
 //        for (int i = 0; i < strLists.size(); i++) {
 //
 //        }
+
+        Collections.sort(strLists);
     }
 }
