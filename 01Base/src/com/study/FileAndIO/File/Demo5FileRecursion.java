@@ -17,7 +17,7 @@ import java.io.File;
         c:\\abc\\b\\b.java
         c:\\abc\\b\\b.txt
  */
-public class Demo5FileRecurison {
+public class Demo5FileRecursion {
     public static void main(String[] args) {
         File file = new File("c:\\abc");
         getAllFile(file);
