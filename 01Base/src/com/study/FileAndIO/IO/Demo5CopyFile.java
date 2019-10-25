@@ -17,6 +17,10 @@ import java.io.IOException;
         3.使用字节输入流对象中的方法read读取文件
         4.使用字节输出流中的方法write,把读取到的字节写入到目的地的文件中
         5.释放资源
+
+    文件的大小:780,831 字节
+    一次读写一个字节:6043毫秒
+    使用数组缓冲读取多个字节,写入多个字节:10毫秒
  */
 public class Demo5CopyFile {
     public static void main(String[] args) throws IOException {

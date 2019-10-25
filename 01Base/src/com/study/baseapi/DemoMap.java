@@ -13,6 +13,7 @@ public class DemoMap {
         //底层是基于哈希表实现的（HashSet就是创建了一个HashMap实现的）
         //是一个无序集合
         //不同步，多线程，不安全
+        //HashMap集合中(key序号是有序的,会自动排序1,2,3,4..)
         HashMap<String,String> hss = new HashMap<>();
         String a = hss.put("asd","zzz");      //如果不重复，则a是空，若重复，则返回被替代的原始值
         hss.put("zxc","z123");
