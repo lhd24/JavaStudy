@@ -2,6 +2,7 @@ package com.study.FileAndIO.IO;
 
 import java.io.FileOutputStream;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Properties;
 import java.util.Set;
@@ -18,7 +19,7 @@ import java.util.Set;
  */
 public class Demo10Properties {
     public static void main(String[] args) throws IOException {
-        show03();
+        show02();
     }
 
     /*
@@ -41,7 +42,7 @@ public class Demo10Properties {
         //1.创建Properties集合对象
         Properties prop = new Properties();
         //2.使用Properties集合对象中的方法load读取保存键值对的文件
-        prop.load(new FileReader("09_IOAndProperties\\prop.txt"));
+        prop.load(new FileReader("01Base\\src\\com\\study\\FileAndIO\\IO\\prop.txt"));
         //prop.load(new FileInputStream("09_IOAndProperties\\prop.txt"));
         //3.遍历Properties集合
         Set<String> set = prop.stringPropertyNames();
@@ -76,15 +77,15 @@ public class Demo10Properties {
         prop.setProperty("古力娜扎","160");
 
         //2.创建字节输出流/字符输出流对象,构造方法中绑定要输出的目的地
-        //FileWriter fw = new FileWriter("09_IOAndProperties\\prop.txt");
+        FileWriter fw = new FileWriter("01Base\\src\\com\\study\\FileAndIO\\IO\\prop.txt");
 
         //3.使用Properties集合中的方法store,把集合中的临时数据,持久化写入到硬盘中存储
-        //prop.store(fw,"save data");
+        prop.store(fw,"save data");
 
         //4.释放资源
-        //fw.close();
+        fw.close();
 
-        prop.store(new FileOutputStream("09_IOAndProperties\\prop2.txt"),"");
+        //prop.store(new FileOutputStream("01Base\\src\\com\\study\\FileAndIO\\IO\\prop2.txt"),"");
     }
 
     /*
