@@ -1,6 +1,6 @@
 package com.jdbc;
 
-import com.domain.Users;
+import com.domain.User;
 import com.utils.JDBCUtils;
 
 import java.sql.*;
@@ -13,7 +13,7 @@ import java.util.List;
 public class Demo7Utils {
 
     public static void main(String[] args) {
-        List<Users> list = new Demo7Utils().findAll();
+        List<User> list = new Demo7Utils().findAll();
         System.out.println(list);
         System.out.println(list.size());
     }
@@ -23,11 +23,11 @@ public class Demo7Utils {
      * 演示JDBC工具类
      * @return
      */
-    public List<Users> findAll(){
+    public List<User> findAll(){
         Connection conn = null;
         Statement stmt = null;
         ResultSet rs = null;
-        List<Users> list = null;
+        List<User> list = null;
         try {
            /* //1.注册驱动
             Class.forName("com.mysql.jdbc.Driver");
@@ -41,8 +41,8 @@ public class Demo7Utils {
             //5.执行sql
             rs = stmt.executeQuery(sql);
             //6.遍历结果集，封装对象，装载集合
-            Users emp = null;
-            list = new ArrayList<Users>();
+            User emp = null;
+            list = new ArrayList<User>();
             while(rs.next()){
                 //获取数据
                 int id = rs.getInt("id");
@@ -50,7 +50,7 @@ public class Demo7Utils {
                 Date lastLoginTime = rs.getDate("lastLoginTime");
 
                 // 创建emp对象,并赋值
-                emp = new Users();
+                emp = new User();
                 emp.setId(id);
                 emp.setUsername(username);
                 emp.setLastLoginTime(lastLoginTime);

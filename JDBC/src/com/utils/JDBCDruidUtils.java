@@ -61,10 +61,7 @@ public class JDBCDruidUtils {
         close(null,stmt,conn);
     }
 
-
     public static void close(ResultSet rs , Statement stmt, Connection conn){
-
-
         if(rs != null){
             try {
                 rs.close();
@@ -72,7 +69,6 @@ public class JDBCDruidUtils {
                 e.printStackTrace();
             }
         }
-
 
         if(stmt != null){
             try {
@@ -94,9 +90,7 @@ public class JDBCDruidUtils {
     /**
      * 获取连接池方法
      */
-
     public static DataSource getDataSource(){
         return  ds;
     }
-
 }

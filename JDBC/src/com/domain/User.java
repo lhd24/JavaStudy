@@ -2,9 +2,10 @@ package com.domain;
 
 import java.util.Date;
 
-public class Users {
+public class User {
     private int id;
-    private  String username;
+    private String username;
+    private String Surname;
     private Date lastLoginTime;
 
     public Date getLastLoginTime() {
@@ -31,11 +32,21 @@ public class Users {
         this.username = username;
     }
 
+    public String getSurname() {
+        return Surname;
+    }
+
+    public void setSurname(String surname) {
+        Surname = surname;
+    }
+
     @Override
     public String toString() {
-        return "Users{" +
+        return "User{" +
                 "id=" + id +
                 ", username='" + username + '\'' +
+                ", Surname='" + Surname + '\'' +
+                ", lastLoginTime=" + lastLoginTime +
                 '}';
     }
 }
