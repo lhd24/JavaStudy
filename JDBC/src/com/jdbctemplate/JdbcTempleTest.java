@@ -119,6 +119,7 @@ public class JdbcTempleTest {
     /**
      * 7. 查询总记录数
      *  queryForObject：查询结果，将结果封装为对象
+     *  注：此结果不能为空，否则会出异常
      *      一般用于聚合函数的查询
      */
     @Test
@@ -126,5 +127,18 @@ public class JdbcTempleTest {
         String sql = "select count(id) from users";
         Long total = template.queryForObject(sql, Long.class);
         System.out.println(total);
+    }
+
+    /**
+     * 7. 查询总记录数
+     *  queryForObject：查询结果，将结果封装为对象
+     *      查询单个对象
+     */
+    @Test
+    public void test7_2(){
+        String sql = "select * from users WHERE id = ?";
+        User user = template.queryForObject(sql,
+                new BeanPropertyRowMapper<User>(User.class), 19);
+        System.out.println(user);
     }
 }

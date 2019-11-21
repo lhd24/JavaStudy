@@ -4,6 +4,15 @@ import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import java.io.IOException;
 
+/**
+ * Servlet相关配置
+     1. urlpartten:Servlet访问路径
+         1. 一个Servlet可以定义多个访问路径 ： @WebServlet({"/d4","/dd4","/ddd4"})
+         2. 路径定义规则：
+             1. /xxx：路径匹配
+             2. /xxx/xxx:多层路径，目录结构
+             3. *.do：扩展名匹配
+ */
 //@WebServlet(urlPatterns = "/demo2")
 @WebServlet("/demo2")
 public class ServletDemo2 implements Servlet {
